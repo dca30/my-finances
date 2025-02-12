@@ -1,0 +1,20 @@
+# Entorno virtual
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de entorno
+.env
+
+# Archivos de logs y caché
+*.log
+*.sqlite
+*.db
+
+# Alembic
+alembic/versions/*.pyc
+
+# Docker
+*.pid
+*.sock
