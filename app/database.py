@@ -2,7 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-#URL_DATABASE = 'postgresql://myfinance:myfinance-pwd@localhost:5434/QuizApplicationYT'
 URL_DATABASE = 'postgresql://myfinance:myfinance-pwd@localhost:5434/myfinance'
 
 engine = create_engine(URL_DATABASE)
