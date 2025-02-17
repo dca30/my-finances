@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Bienvenido a Mi App de Finanzas</h1>
+    <p>Aquí podrás gestionar y visualizar tus fondos de inversión.</p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Fecha de Compra</th>
+                <th>Valor Compra (€)</th>
+                <th>Nº de Participaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fondo in fondos %}
+            <tr>
+                <td>{{ fondo.id }}</td>
+                <td>{{ fondo.nombre }}</td>
+                <td>{{ fondo.fecha_compra }}</td>
+                <td>{{ fondo.valor_compra }}</td>
+                <td>{{ fondo.num_participaciones }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

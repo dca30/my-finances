@@ -1,0 +1,8 @@
+{% for fondo in fondos %}
+<tr>
+    <td>{{ fondo.nombre }}</td>
+    <td>{{ fondo.fecha_compra }}</td>
+    <td>{{ fondo.valor_compra }}</td>
+    <td>{{ fondo.num_participaciones }}</td>
+</tr>
+{% endfor %}
