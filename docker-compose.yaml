@@ -1,0 +1,13 @@
+version: "2"
+services:
+  postgres:
+    image: postgres:14-bullseye
+    container_name: pg_finance
+    ports:
+      - "5434:5432"
+#    volumes:
+#      - /home/dcalvo/code/my-finances/data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=myfinance
+      - POSTGRES_USER=myfinance
+      - POSTGRES_PASSWORD=myfinance-pwd
