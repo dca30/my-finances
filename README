@@ -10,3 +10,5 @@ Para desplegar el proyecto:
 uvicorn main:app --reload --port 8001
 
 npm run dev
+
+https://www.chartjs.org/
