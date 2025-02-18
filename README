@@ -8,3 +8,5 @@ pip install -r requirements.txt
 
 Para desplegar el proyecto:
 uvicorn main:app --reload --port 8001
+
+npm run dev

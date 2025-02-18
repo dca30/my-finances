@@ -14,6 +14,7 @@ models.Base.metadata.create_all(bind=engine)
 app.include_router(fondos.router)
 app.include_router(upload.router)
 app.include_router(frontend.router)
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 templates = Jinja2Templates(directory="templates")

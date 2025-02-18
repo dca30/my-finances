@@ -23,3 +23,7 @@ alembic/versions/*.pyc
 
 #BD
 data
+
+node_modules
+package-lock.json
+app/static/css/output.css

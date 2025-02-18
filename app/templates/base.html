@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="static/css/output.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', path='/css/output.css') }}" rel="stylesheet">
+
     <title>{% block title %}Mi App{% endblock %}</title>
+
 
     <!-- ✅ Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
