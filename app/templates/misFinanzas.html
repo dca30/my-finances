@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="/">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Ir a Index
+    </button>
+</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>ISIN</th>
+            <th>Participaciones</th>
+            <th>Rentabilidad</th>
+            <th>Invertido</th>
+            <th>Beneficio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fondo in fondos %}
+        <tr>
+            <td>{{ fondo.id }}</td>
+            <td>{{ fondo.nombre }}</td>
+            <td>{{ fondo.isin }}</td>
+            <td>{{ fondo.participaciones }}</td>
+            <td>{{ fondo.rentabilidad }}</td>
+            <td>{{ fondo.invertido }}</td>
+            <td>{{ fondo.beneficio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha Compra</th>
+            <th>ISIN</th>
+            <th>Importe</th>
+            <th>Participaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for compra in compras %}
+        <tr>
+            <td>{{ compra.id }}</td>
+            <td>{{ compra.fecha_compra }}</td>
+            <td>{{ compra.isin }}</td>
+            <td>{{ compra.importe }}</td>
+            <td>{{ compra.participaciones }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

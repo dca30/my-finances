@@ -22,23 +22,27 @@ async def read_fondo(fondo_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail='Fondo not found')
     return result
 
+@router.get("/fondos/", response_model=List[schemas.FondoResponse])
+async def list_fondos(db: Session = Depends(get_db)):
+    fondos = db.query(models.Fondo).all()
+    return fondos
+
 @router.post("/fondos/")
 async def create_fondo(fondo: FondoBase, db: Session = Depends(get_db)):
     db_fondo = models.Fondo(
         nombre=fondo.nombre,
-        fecha_compra=fondo.fecha_compra,
-        valor_compra=fondo.valor_compra,
-        num_participaciones=fondo.num_participaciones
+        isin=fondo.isin,
+        participaciones=fondo.participaciones,
+        rentabilidad=fondo.rentabilidad,
+        invertido=fondo.beneficio,
+        beneficio=fondo.beneficio
     )
     db.add(db_fondo)
     db.commit()
     db.refresh(db_fondo)
     return db_fondo
 
-@router.get("/fondos/", response_model=List[schemas.FondoResponse])
-async def list_fondos(db: Session = Depends(get_db)):
-    fondos = db.query(models.Fondo).all()
-    return fondos
+
 
 @router.delete("/fondos/{fondo_id}")
 async def delete_fondo(fondo_id: int, db: Session = Depends(get_db)):
@@ -62,3 +66,4 @@ async def update_fondo(fondo_id: int, fondo: FondoUpdate, db: Session = Depends(
     db.commit()
     db.refresh(db_fondo)
     return db_fondo
+    

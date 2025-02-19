@@ -11,4 +11,14 @@ uvicorn main:app --reload --port 8001
 
 npm run dev
 
+python populate_db.py
+
 https://www.chartjs.org/
+
+https://tailwindui.com/components
+
+https://www.hyperui.dev/
+
+https://flyonui.com/
+
+https://www.material-tailwind.com/docs/html/list
